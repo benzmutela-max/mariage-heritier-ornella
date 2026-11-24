@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariage de Héritier & Ornella - 12 Décembre 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #b8924a;
+            --gold-light: #e5d1a4;
+            --sage: #5c6b5d;
+            --cream: #fcf9f5;
+            --blush: #f4e8e3;
+            --text-dark: #2f2a26;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--blush) 0%, #eae2d8 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 12px;
+        }
+
+        .card {
+            background-color: var(--cream);
+            max-width: 540px;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(47, 42, 38, 0.15);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--gold-light);
+            padding: 45px 28px;
+            text-align: center;
+        }
+
+        /* Cadre intérieur doré */
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            border: 1.5px solid var(--gold);
+            border-radius: 10px;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .floral-top {
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            color: var(--sage);
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.4rem;
+            color: var(--gold);
+            line-height: 1.15;
+            margin: 10px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .invite-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #554e48;
+            margin-bottom: 24px;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 22px 0;
+            color: var(--gold);
+        }
+
+        .divider::before, .divider::after {
+            content: "";
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            flex: 1;
+            margin: 0 12px;
+        }
+
+        .date-box {
+            background: rgba(184, 146, 74, 0.08);
+            border-top: 1px solid var(--gold-light);
+            border-bottom: 1px solid var(--gold-light);
+            padding: 18px 10px;
+            margin: 18px 0;
+        }
+
+        .date-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: 1px;
+        }
+
+        .time-main {
+            font-size: 1.05rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* Compte à rebours */
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin: 22px 0;
+        }
+
+        .time-unit {
+            background: #ffffff;
+            border: 1px solid var(--gold-light);
+            border-radius: 8px;
+            padding: 10px 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .time-unit span {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .time-unit small {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--sage);
+        }
+
+        .venue-section {
+            margin: 22px 0;
+        }
+
+        .venue-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .venue-city {
+            font-size: 0.9rem;
+            color: #6b635b;
+            margin-top: 3px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 13px 26px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin: 6px 4px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold) 0%, #9c7835 100%);
+            color: #ffffff;
+            box-shadow: 0 6px 18px rgba(184, 146, 74, 0.35);
+            width: 100%;
+            max-width: 340px;
+            padding: 15px 28px;
+            font-size: 0.92rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(184, 146, 74, 0.5);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--sage);
+            color: var(--sage);
+            background: transparent;
+            font-size: 0.78rem;
+            padding: 9px 18px;
+            margin-top: 10px;
+        }
+
+        .btn-outline:hover {
+            background: var(--sage);
+            color: #ffffff;
+        }
+
+        .details-grid {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 22px 0;
+            border: 1px dashed var(--gold-light);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .badge-couple {
+            display: inline-block;
+            background: var(--blush);
+            color: var(--text-dark);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            border: 1px solid var(--gold-light);
+        }
+
+        .rsvp-note {
+            font-size: 0.78rem;
+            color: #776f67;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 400px) {
+            .names { font-size: 2.8rem; }
+            .card { padding: 35px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="floral-top">❦ ✦ ❦</div>
+    <div class="subtitle">Invitation au Mariage</div>
+
+    <h1 class="names">Héritier &amp; Ornella</h1>
+    <p class="invite-text">Ont l'immense joie de vous convier à célébrer leur union</p>
+
+    <div class="date-box">
+        <div class="date-main">Samedi 12 Décembre 2026</div>
+        <div class="time-main">À partir de 19h00</div>
+    </div>
+
+    <!-- Compte à rebours -->
+    <div class="countdown" id="countdown">
+        <div class="time-unit"><span id="days">--</span><small>Jours</small></div>
+        <div class="time-unit"><span id="hours">--</span><small>Heures</small></div>
+        <div class="time-unit"><span id="minutes">--</span><small>Min</small></div>
+        <div class="time-unit"><span id="seconds">--</span><small>Sec</small></div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <div class="venue-section">
+        <div class="venue-title">Salle de Fête Imara</div>
+        <div class="venue-city">Lubumbashi</div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Salle+de+fete+Imara+Lubumbashi" target="_blank" rel="noopener" class="btn btn-outline">
+            📍 Voir l'itinéraire Google Maps
+        </a>
+    </div>
+
+    <div class="details-grid">
+        <div class="badge-couple">Invitation valable pour un couple (2 personnes)</div>
+        <div><strong>Réception &amp; Soirée dansante</strong> dès 19h00</div>
+        <div><strong>Code vestimentaire :</strong> Tenue de soirée chic</div>
+    </div>
+
+    <!-- Bouton RSVP connecté à votre Google Form -->
+    <a href="https://forms.gle/HZhzGgLvCp8ytyHq8" target="_blank" rel="noopener" class="btn btn-primary">
+        Confirmer notre présence (RSVP)
+    </a>
+    <p class="rsvp-note">Merci de confirmer votre présence avant le <strong>28 Novembre 2026</strong></p>
+
+    <div class="floral-top" style="margin-top: 20px; margin-bottom: 0;">❦</div>
+</div>
+
+<script>
+    // Date cible : 12 Décembre 2026 à 19h00
+    const weddingDate = new Date("2026-12-12T19:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        if (distance < 0) {
+            document.getElementById("countdown").innerHTML = "<div style='grid-column: span 4; font-weight: 600; color: var(--gold);'>C'est le grand jour !</div>";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = String(days).padStart(2, '0');
+        document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
